@@ -1,6 +1,6 @@
 #include "Topic.h"
 
-//конструкторы
+//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 Topic::Topic() {
 	this->_courseName = "undefined";
 	this->_topicName = "undefined";
@@ -9,22 +9,22 @@ Topic::Topic() {
 	this->_topicSize = 0;
 }
 
-//список инициализации
+//СЃРїРёСЃРѕРє РёРЅРёС†РёР°Р»РёР·Р°С†РёРё
 Topic::Topic(std::string courseName, std::string topicName, int lectsCount, int tasksCount, int topicSize) : 
 	_courseName(correctAlpha(courseName)), _topicName(correctAlpha(topicName)), _lectsCount(correctCount(lectsCount)), 
 	_tasksCount(correctCount(tasksCount)), _topicSize(correctCount(topicSize)) {}
 
-//делегирование конструкторов
+//РґРµР»РµРіРёСЂРѕРІР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРІ
 Topic::Topic(std::string courseName, std::string topicName, int lectsCount, int tasksCount) :
 	Topic(courseName, topicName, lectsCount, tasksCount, 0) {}
 Topic::Topic(std::string courseName, std::string topicName, int lectsCount) : Topic(courseName, topicName, lectsCount, 0, 0) {}
 Topic::Topic(std::string courseName, std::string topicName) : Topic(courseName, topicName, 0, 0, 0) {}
 Topic::Topic(std::string courseName) : Topic(courseName, "undefined", 0, 0, 0) {}
 
-//деструктор
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 Topic::~Topic() {}
 
-//перегруженные операторы
+//РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 Topic Topic::operator++()
 {
 	++_topicSize;
@@ -41,7 +41,7 @@ Topic Topic::operator--()
 	}
 	else
 	{
-		std::cout << "Количество страниц темы меньше 0!" << std::endl;
+		std::cout << "ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ°Г Г­ГЁГ¶ ГІГҐГ¬Г» Г¬ГҐГ­ГјГёГҐ 0!" << std::endl;
 		return *this;
 	}
 }
@@ -73,16 +73,16 @@ bool Topic::operator> (Topic other)
 std::ostream& operator<<(std::ostream& output, Topic t)
 {
 	setlocale(LC_ALL, "");
-	output << "Название курса: " << t._courseName << std::endl
-		<< "Название темы: " << t._topicName << std::endl
-		<< "Количество лекций в теме: " << t._lectsCount << std::endl
-		<< "Количество задач в теме: " << t._tasksCount << std::endl
-		<< "Размер темы в страницах: " << t._topicSize << std::endl
+	output << "РќР°Р·РІР°РЅРёРµ РєСѓСЂСЃР°: " << t._courseName << std::endl
+		<< "РќР°Р·РІР°РЅРёРµ С‚РµРјС‹: " << t._topicName << std::endl
+		<< "РљРѕР»РёС‡РµСЃС‚РІРѕ Р»РµРєС†РёР№ РІ С‚РµРјРµ: " << t._lectsCount << std::endl
+		<< "РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РґР°С‡ РІ С‚РµРјРµ: " << t._tasksCount << std::endl
+		<< "Р Р°Р·РјРµСЂ С‚РµРјС‹ РІ СЃС‚СЂР°РЅРёС†Р°С…: " << t._topicSize << std::endl
 		<< "_____________________________________________" << std::endl;
 	return output;
 }
 
-//геттеры и сеттеры
+//РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹
 
 void Topic::setCourseName(std::string courseName)
 {
@@ -134,14 +134,14 @@ int Topic::getTopicSize()
 	return _topicSize;
 }
 
-//методы
+//РјРµС‚РѕРґС‹
 
 void Topic::displayTopic()
 {
 	setlocale(LC_ALL, "");
-	std::cout << "Название курса: " << _courseName << std::endl;
-	std::cout << "Название темы: " << _topicName << std::endl;
-	std::cout << "Количество лекций в теме: " << _lectsCount << std::endl;
-	std::cout << "Количество задач в теме: " << _tasksCount << std::endl;
-	std::cout << "Размер темы в страницах: " << _topicSize << std::endl;
+	std::cout << "РќР°Р·РІР°РЅРёРµ РєСѓСЂСЃР°: " << _courseName << std::endl;
+	std::cout << "РќР°Р·РІР°РЅРёРµ С‚РµРјС‹: " << _topicName << std::endl;
+	std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ Р»РµРєС†РёР№ РІ С‚РµРјРµ: " << _lectsCount << std::endl;
+	std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РґР°С‡ РІ С‚РµРјРµ: " << _tasksCount << std::endl;
+	std::cout << "Р Р°Р·РјРµСЂ С‚РµРјС‹ РІ СЃС‚СЂР°РЅРёС†Р°С…: " << _topicSize << std::endl;
 }
