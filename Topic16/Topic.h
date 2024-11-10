@@ -8,7 +8,7 @@ using namespace anyTopic;
 class Topic
 {
 public:
-	//конструкторы
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 	Topic();
 	Topic(std::string courseName, std::string topicName, int lectsCount, int tasksCount, int topicSize);
 	Topic(std::string courseName, std::string topicName, int lectsCount, int tasksCount);
@@ -16,10 +16,10 @@ public:
 	Topic(std::string courseName, std::string topicName);
 	Topic(std::string courseName);
 
-	//деструктор
+	//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 	~Topic();
 
-	//перегруженные операторы
+	//РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 	Topic operator++();
 	Topic operator--();
 
@@ -31,7 +31,7 @@ public:
 
 	friend std::ostream& operator<< (std::ostream& output, Topic t);
 
-	//геттеры и сеттеры
+	//РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹
 	void setCourseName(std::string courseName);
 	std::string getCourseName();
 	void setTopicName(std::string topicName);
@@ -43,11 +43,11 @@ public:
 	void setTopicSize(int topicSize);
 	int getTopicSize();
 
-	//методы
+	//РјРµС‚РѕРґС‹
 	void displayTopic();
 
 private:
-	//поля
+	//РїРѕР»СЏ
 	std::string _courseName;
 	std::string _topicName;
 	int _lectsCount;
